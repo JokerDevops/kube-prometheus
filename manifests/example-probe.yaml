@@ -10,5 +10,7 @@ spec:
     url: blackbox-exporter.monitoring.svc.cluster.local:19115
   targets:
     staticConfig:
+      labels:
+        env: online
       static:
-      - http://www.baishan.com
+        - https://www.baishan.com

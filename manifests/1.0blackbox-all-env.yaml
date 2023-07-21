@@ -1,0 +1,519 @@
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: dev-managerment
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: Dev
+        company: baishan
+        project: "管理平台"
+      static:
+        - https://172.18.157.235:8888
+
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: dev-managerment-portal
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: Dev
+        company: baishan
+        project: "管理平台门户"
+      static:
+        - https://172.18.157.235:8887
+
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: dev-hd-cfg-web
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: Dev
+        company: baishan
+        project: "配置中心"
+      static:
+        - https://172.18.157.235:8855
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: dev-runtime
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: Dev
+        company: baishan
+        project: "编排平台"
+      static:
+        - https://172.18.157.235:8883
+
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: dev-keycloak
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: Dev
+        company: baishan
+        project: "用户中心"
+      static:
+        - https://172.18.157.235:8283
+
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: test-managerment
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: Test
+        company: baishan
+        project: "管理平台"
+      static:
+        - https://172.18.157.233:8888
+
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: test-managerment-portal
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: Test
+        company: baishan
+        project: "管理平台门户"
+      static:
+        - https://172.18.157.233:8887
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: test-hd-cfg-web
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: Test
+        company: baishan
+        project: "配置中心"
+      static:
+        - https://172.18.157.233:8855
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: test-runtime
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: Test
+        company: baishan
+        project: "编排平台"
+      static:
+        - https://172.18.157.233:8883
+
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: test-keycloak
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: Test
+        company: baishan
+        project: "用户中心"
+      static:
+        - https://172.18.157.233:8283
+
+# release-4.0 售前演示环境
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: pre-sales-demo-managerment
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: "售前演示-4.x-maintenance"
+        company: baishan
+        project: "管理平台"
+      static:
+        - https://172.18.157.29:8888
+
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: pre-sales-demo-managerment-portal
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: "售前演示-4.x-maintenance"
+        company: baishan
+        project: "管理平台门户"
+      static:
+        - https://172.18.157.29:8887
+
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: pre-sales-demo-hd-cfg-web
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: "售前演示-4.x-maintenance"
+        company: baishan
+        project: "配置中心"
+      static:
+        - https://172.18.157.29:8855
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: pre-sales-demo-runtime
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: "售前演示-4.x-maintenance"
+        company: baishan
+        project: "编排平台"
+      static:
+        - https://172.18.157.29:8883
+
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: pre-sales-demo-keycloak
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: "售前演示-4.x-maintenance"
+        company: baishan
+        project: "用户中心"
+      static:
+        - https://172.18.157.29:8283
+
+# 松田 kong 开发环境
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: dev-songtian-managerment
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: "kong 研发环境"
+        company: baishan
+        project: "管理平台"
+      static:
+        - https://172.18.89.176:8888
+
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: dev-songtian-managerment-portal
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: "kong 研发环境"
+        company: baishan
+        project: "管理平台门户"
+      static:
+        - https://172.18.89.176:8887
+
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: kong-songtian-keycloak
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: "kong 研发环境"
+        company: baishan
+        project: "用户中心"
+      static:
+        - https://172.18.89.176:8283
+
+# runtime 开发测试环境单机
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: dev-stand-alone-runtime
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: "runtime单机"
+        company: baishan
+        project: "编排平台"
+      static:
+        - https://172.18.89.35:8443
+
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: dev-stand-alone-keycloak
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: "runtime单机"
+        company: baishan
+        project: "用户中心"
+      static:
+        - https://172.18.89.35:8283
+
+# hd-dev
+
+#---
+#kind: Probe
+#apiVersion: monitoring.coreos.com/v1
+#metadata:
+#  name: hd-dev-hd-cfg-api
+#  namespace: monitoring
+#spec:
+#  interval: 60s
+#  module: http_2xx
+#  prober:
+#    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+#  targets:
+#    staticConfig:
+#      labels:
+#        env: "hd-dev"
+#        company: baishan
+#        project: "配置中心"
+#      static:
+#        - https://172.18.89.240:8855
+
+#---
+#kind: Probe
+#apiVersion: monitoring.coreos.com/v1
+#metadata:
+#  name: hd-dev-runtime
+#  namespace: monitoring
+#spec:
+#  interval: 60s
+#  module: http_2xx
+#  prober:
+#    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+#  targets:
+#    staticConfig:
+#      labels:
+#        env: "hd-dev"
+#        company: baishan
+#        project: "编排平台"
+#      static:
+#        - https://172.18.89.240:8443
+
+#---
+#kind: Probe
+#apiVersion: monitoring.coreos.com/v1
+#metadata:
+#  name: hd-dev-keycloak
+#  namespace: monitoring
+#spec:
+#  interval: 60s
+#  module: http_2xx
+#  prober:
+#    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+#  targets:
+#    staticConfig:
+#      labels:
+#        env: "hd-dev"
+#        company: baishan
+#        project: "用户中心"
+#      static:
+#        - https://172.18.89.240:8283
+
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: orchsym-demo
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: "公网demo"
+        company: baishan
+        project: "管理平台"
+      static:
+        - https://orchsym-portal.sp.baishan.com/
+
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: runtime-demo
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: "公网demo"
+        company: baishan
+        project: "编排平台"
+      static:
+        - https://runtime.sp.baishan.com/
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: runtime-dashboard-demo
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: "公网demo"
+        company: baishan
+        project: "编排平台新前端"
+      static:
+        - https://runtime-dashboard.sp.baishan.com

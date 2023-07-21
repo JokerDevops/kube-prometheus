@@ -5,6 +5,8 @@ data:
       "http_2xx":
         "http":
           "preferred_ip_protocol": "ip4"
+          "tls_config":
+            "insecure_skip_verify": true
         "prober": "http"
       "http_post_2xx":
         "http":
