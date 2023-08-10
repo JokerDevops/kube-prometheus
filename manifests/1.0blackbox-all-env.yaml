@@ -397,68 +397,6 @@ spec:
       static:
         - https://172.18.89.35:8283
 
-# hd-dev
-
-#---
-#kind: Probe
-#apiVersion: monitoring.coreos.com/v1
-#metadata:
-#  name: hd-dev-hd-cfg-api
-#  namespace: monitoring
-#spec:
-#  interval: 60s
-#  module: http_2xx
-#  prober:
-#    url: blackbox-exporter.monitoring.svc.cluster.local:19115
-#  targets:
-#    staticConfig:
-#      labels:
-#        env: "hd-dev"
-#        company: baishan
-#        project: "配置中心"
-#      static:
-#        - https://172.18.89.240:8855
-
-#---
-#kind: Probe
-#apiVersion: monitoring.coreos.com/v1
-#metadata:
-#  name: hd-dev-runtime
-#  namespace: monitoring
-#spec:
-#  interval: 60s
-#  module: http_2xx
-#  prober:
-#    url: blackbox-exporter.monitoring.svc.cluster.local:19115
-#  targets:
-#    staticConfig:
-#      labels:
-#        env: "hd-dev"
-#        company: baishan
-#        project: "编排平台"
-#      static:
-#        - https://172.18.89.240:8443
-
-#---
-#kind: Probe
-#apiVersion: monitoring.coreos.com/v1
-#metadata:
-#  name: hd-dev-keycloak
-#  namespace: monitoring
-#spec:
-#  interval: 60s
-#  module: http_2xx
-#  prober:
-#    url: blackbox-exporter.monitoring.svc.cluster.local:19115
-#  targets:
-#    staticConfig:
-#      labels:
-#        env: "hd-dev"
-#        company: baishan
-#        project: "用户中心"
-#      static:
-#        - https://172.18.89.240:8283
-
 ---
 kind: Probe
 apiVersion: monitoring.coreos.com/v1
@@ -478,6 +416,25 @@ spec:
         project: "管理平台"
       static:
         - https://orchsym-portal.sp.baishan.com/
+---
+kind: Probe
+apiVersion: monitoring.coreos.com/v1
+metadata:
+  name: orchsym-web-demo
+  namespace: monitoring
+spec:
+  interval: 60s
+  module: http_2xx
+  prober:
+    url: blackbox-exporter.monitoring.svc.cluster.local:19115
+  targets:
+    staticConfig:
+      labels:
+        env: "公网demo"
+        company: baishan
+        project: "管理平台门户"
+      static:
+        - https://orchsym-web.sp.baishan.com/
 
 ---
 kind: Probe
